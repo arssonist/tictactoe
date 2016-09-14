@@ -1,0 +1,11 @@
+table{
+  margin: auto;
+  cursor: pointer;
+}
+
+td {
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
