@@ -13,7 +13,7 @@ $(document).ready (function() {
       if(turn % 2 === 0){
         $(this).text('X');
       } else {
-        $(this).text('O');
+        $(this).text('0');
       }
     }
     checkWin();
@@ -24,13 +24,35 @@ $(document).ready (function() {
 // if ($(.column1).text() === 'X'){alert('x wins')};
 // diaganol 1
 function checkWin(){
-
+  // check for x win
   if (($('.column1').text() === 'XXX') ||
     ($('.column2').text() === 'XXX') ||
     ($('.column3').text() === 'XXX') ||
-  (($('#c1r1').text() === 'X') &&                   ($('#c2r2').text() === 'X') && ($('#c3r3').text() === 'X')))
-  {alert('X wins')
+    ($('.row1 td').text() === 'XXX') ||
+    ($('.row2 td').text() === 'XXX') ||
+    ($('.row3 td').text() === 'XXX') ||
+    (($('#c1r1').text() === 'X') &&          ($('#c2r2').text() === 'X') &&   ($('#c3r3').text() === 'X')) ||
+    (($('#c3r1').text() === 'X') &&
+    ($('#c2r2').text() === 'X') &&
+    ($('#c3r1').text() === 'X'))
+  )
+  {
+    alert('X wins')
   }
+  // check for 0 wins (zero only!)
+  if (($('.column1').text() === '000') ||
+    ($('.column2').text() === '000') ||
+    ($('.column3').text() === '000') ||
+    ($('.row1 td').text() === '000') ||
+    ($('.row2 td').text() === '000') ||
+    ($('.row3 td').text() === '000') ||
+    (($('#c1r1').text() === '0') &&          ($('#c2r2').text() === '0') &&   ($('#c3r3').text() === '0')) ||
+    (($('#c3r1').text() === '0') &&
+    ($('#c2r2').text() === '0') &&
+    ($('#c3r1').text() === '0')))
+    {
+      alert ('0 wins')
+    }
 }
 
 // {
