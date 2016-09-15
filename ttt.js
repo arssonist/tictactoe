@@ -16,19 +16,26 @@ $(document).ready (function() {
         $(this).text('O');
       }
     }
-
-    $( '.column1' ).each( function() {
-      
-    } );
-
-
-
+    checkWin();
     turn++;
   });
 });
 
+// if ($(.column1).text() === 'X'){alert('x wins')};
+// diaganol 1
+function checkWin(){
 
+  if (($('.column1').text() === 'XXX') ||
+    ($('.column2').text() === 'XXX') ||
+    ($('.column3').text() === 'XXX') ||
+  (($('#c1r1').text() === 'X') &&                   ($('#c2r2').text() === 'X') && ($('#c3r3').text() === 'X')))
+  {alert('X wins')
+  }
+}
 
+// {
+//   alert('X wins')
+// };
 
 // text() is empty text
 // if ($('td').text() === '') {
@@ -43,3 +50,5 @@ $(document).ready (function() {
 //   ## make odd
 // }
 //   }
+  //
+  // if ($("#one").hasClass('o') && $("#two").hasClass('o') && $("#three").hasClass('o') || $("#four").hasClass('o') && $("#five").hasClass('o') && $("#six").hasClass('o') || $("#seven").hasClass('o') && $("#eight").hasClass('o') && $("#nine").hasClass('o') || $("#one").hasClass('o') && $("#four").hasClass('o') && $("#seven").hasClass('o') || $("#two").hasClass('o') && $("#five").hasClass('o') && $("#eight").hasClass('o') || $("#three").hasClass('o') && $("#six").hasClass('o') && $("#nine").hasClass('o') || $("#one").hasClass('o') && $("#five").hasClass('o') && $("#nine").hasClass('o') || $("#three").hasClass('o') && $("#five").hasClass('o') && $("#seven").hasClass('o'))
